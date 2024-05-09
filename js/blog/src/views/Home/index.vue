@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import navigation from '@/components/navigation/index.vue'
-import { GameControllerOutline, GameController } from '@vicons/ionicons5'
 import { IosSearch } from '@vicons/ionicons4'
 </script>
 
@@ -8,13 +7,13 @@ import { IosSearch } from '@vicons/ionicons4'
   <div class="container">
     <navigation />
     <div class="content-main">
-      <div class="left">
+      <!-- <div class="left">
         <div>GOLANG</div>
         <div>HTML5</div>
         <div>CSS3</div>
         <div>VUE</div>
         <div>JAVASCRIPT</div>
-      </div>
+      </div> -->
       <div class="main">
         <div class="search">
           <div class="search-main">论如何找到女朋友的自我修养, 答：提高思想觉悟</div>
@@ -38,110 +37,99 @@ import { IosSearch } from '@vicons/ionicons4'
 </template>
 
 
-<style scoped>
-body {
-  margin: 0px;
-  padding: 0px;
-}
+<style scoped lang="less">
 
 .container {
   height: 100vh;
   width: 100vw;
+
   background-color: rgb(227, 227, 227);
-  position: absolute
+  position: absolute;
+
+  .content-main {
+
+    .main {
+      width: 960px;
+
+      background-color: rgb(240, 240, 240);
+
+      padding: 20px 20px;
+      margin: 0 auto;
+
+      box-sizing: border-box;
+      overflow: hidden;
+
+      .search {
+        height: 66px;
+        background-color: white;
+
+        .search-main {
+          line-height: 66px;
+
+          font-size: 16px;
+          font-weight: 400;
+
+          margin-left: 10px;
+          width: 70%;
+        }
+
+        .n-icon {
+          float: right;
+          margin-top: -55px;
+        }
+      }
+
+      .context {
+        width: 960px;
+
+        display: flex;
+        flex-direction: column;
+
+        div {
+          height: 74px;
+          line-height: 74px;
+
+          border-bottom: 3px solid rgb(229, 229, 229);
+
+          font-size: 19px;
+          font-weight: 400;
+
+          letter-spacing: 2px;
+          &:before {
+             content: "";
+             display: block;
+             background: rgb(165, 214, 63);
+   
+             width: 10px;
+             height: 10px;
+   
+             float: left;
+             border-radius: 50%;
+   
+             margin: 33px 5px 0px 5px;
+   
+           }
+        }
+
+      }
+    }
+  }
 }
 
-.content-main {
-  /* display: flex; */
-}
 
-.main {
-  width: 960px;
-  background-color: rgb(240, 240, 240);
-  padding: 20px 20px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  /* margin-left: 67px; */
-  overflow: hidden;
-}
-
-.search {
-  height: 66px;
-  background-color: white;
-}
-
-.search-main {
-  line-height: 66px;
-  font-size: 16px;
-  font-weight: 400;
-  margin-left: 10px;
-  width: 70%;
-}
-
-.n-icon {
-  float: right;
-  margin-right: 10px;
-  margin-top: -55px;
-}
 
 .left {
   position: absolute;
   display: flex;
   flex-direction: column;
+
   width: 304px;
   height: 326px;
-  margin-left: 100px;
-  margin-top: 20px;
+
+  margin: 20px 0 0 100px;
+
   padding: 5px;
   background-color: white;
 }
-.left>div {
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-bottom: 1px dashed black;
-  box-sizing: border-box;
-  
-}
-.context {
-  width: 960px;
-  display: flex;
-  flex-direction: column;
- 
-}
 
-.context>div::before{
-  content: "";
-  display: block;
-  background: rgb(165, 214, 63);
-  width: 10px;
-  height: 10px;
-  float: left;
-  border-radius: 50%;
-  margin-top: 33px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.context>div {
-  height: 74px;
-  line-height: 74px;
-  border-bottom: 3px solid rgb(229, 229, 229);
-  font-size: 19px;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-.n-layout-footer {
-  background: rgba(128, 128, 128, 0.2);
-  padding: 24px;
-}
-
-.n-layout-sider {
-  background: rgba(128, 128, 128, 0.3);
-}
-
-.n-layout-content {
-  background: rgba(128, 128, 128, 0.4);
-}
 </style>
