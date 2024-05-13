@@ -1,4 +1,5 @@
-<script setup>
+<script setup lang="ts">
+const abc = 'asd'
 </script>
 
 <template>
@@ -12,7 +13,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .navigation {
   background-color: rgb(247, 247, 247);
 
@@ -33,13 +34,13 @@
       font-weight: 400;
 
       &:after {
-        content: "";
+        content: '';
         display: block;
-  
+
         background-color: rgb(42, 103, 228);
         width: 100%;
         height: 4px;
-  
+
         margin-top: -30px;
         border-radius: 5px;
       }
@@ -48,6 +49,5 @@
 }
 
 .font {
-  
 }
 </style>

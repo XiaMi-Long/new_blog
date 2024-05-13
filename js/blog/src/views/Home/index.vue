@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import navigation from '@/components/navigation/index.vue'
-import { IosSearch } from '@vicons/ionicons4'
+// import { IosSearch } from '@vicons/ionicons4'
 </script>
 
 <template>
@@ -32,13 +32,10 @@ import { IosSearch } from '@vicons/ionicons4'
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
-
-<style scoped lang="less">
-
+<style scoped lang="scss">
 .container {
   height: 100vh;
   width: 100vw;
@@ -47,7 +44,6 @@ import { IosSearch } from '@vicons/ionicons4'
   position: absolute;
 
   .content-main {
-
     .main {
       width: 960px;
 
@@ -96,27 +92,23 @@ import { IosSearch } from '@vicons/ionicons4'
 
           letter-spacing: 2px;
           &:before {
-             content: "";
-             display: block;
-             background: rgb(165, 214, 63);
-   
-             width: 10px;
-             height: 10px;
-   
-             float: left;
-             border-radius: 50%;
-   
-             margin: 33px 5px 0px 5px;
-   
-           }
-        }
+            content: '';
+            display: block;
+            background: rgb(165, 214, 63);
 
+            width: 10px;
+            height: 10px;
+
+            float: left;
+            border-radius: 50%;
+
+            margin: 33px 5px 0px 5px;
+          }
+        }
       }
     }
   }
 }
-
-
 
 .left {
   position: absolute;
@@ -131,5 +123,4 @@ import { IosSearch } from '@vicons/ionicons4'
   padding: 5px;
   background-color: white;
 }
-
 </style>
