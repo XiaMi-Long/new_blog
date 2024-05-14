@@ -1,35 +1,33 @@
-<script setup>
-import { ref,  onMounted, shallowRef } from 'vue';
+<script setup lang="ts">
+import { ref, onMounted, shallowRef } from 'vue'
 import Home from '@/views/Home/index.vue'
 import Article from '@/views/Article/index.vue'
 import About from '@/views/About/index.vue'
 
-const titles = ref(['首页', '文章', '友链', '关于']);
+const titles = ref(['首页', '文章', '友链', '关于'])
 const chooseComponent = shallowRef()
 const emit = defineEmits(['send_title'])
 
 function changeTitle(value) {
-  console.log(value);
+  console.log(value)
   if (value === '首页') {
     chooseComponent.value = Home
-  }
-  else if (value === '文章') {
+  } else if (value === '文章') {
     chooseComponent.value = Article
-  }
-  else if (value === '关于') {
+  } else if (value === '关于') {
     chooseComponent.value = About
   }
 }
 
-onMounted(
-  chooseComponent.value = Home
-)
+onMounted((chooseComponent.value = Home))
 </script>
 
 <template>
   <div class="navigation">
     <div class="version_heart">
-      <div v-for="title in titles" :key="title" class="title" @click="changeTitle(title)">{{ title }}</div>
+      <div v-for="title in titles" :key="title" class="title" @click="changeTitle(title)">
+        {{ title }}
+      </div>
     </div>
   </div>
   <component :is="chooseComponent"></component>
@@ -62,9 +60,8 @@ onMounted(
 
       cursor: pointer;
 
-
       &:after {
-        content: "";
+        content: '';
         display: block;
 
         background-color: rgb(42, 103, 228);
@@ -80,6 +77,4 @@ onMounted(
     }
   }
 }
-
 </style>
-

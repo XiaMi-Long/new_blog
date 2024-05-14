@@ -11,7 +11,9 @@ import { IosSearch } from '@vicons/ionicons4'
     <div class="content-main">
       <div class="main">
         <div class="search">
-          <div class="search-main">论如何找到女朋友的自我修养, 答：提高思想觉悟</div>
+          <div class="search-main">
+            论如何找到女朋友的自我修养, 答：就算来往一千条信息，心却可能仅仅接近一厘米而已
+          </div>
           <n-icon size="50">
             <IosSearch />
           </n-icon>
@@ -34,7 +36,6 @@ import { IosSearch } from '@vicons/ionicons4'
   </div>
 </template>
 
-
 <style scoped lang="less">
 .container {
   height: 120vh;
@@ -44,7 +45,6 @@ import { IosSearch } from '@vicons/ionicons4'
   position: absolute;
 
   .content-main {
-
     .main {
       width: 960px;
 
@@ -94,7 +94,7 @@ import { IosSearch } from '@vicons/ionicons4'
           letter-spacing: 2px;
 
           &:before {
-            content: "";
+            content: '';
             display: block;
             background: rgb(165, 214, 63);
 
@@ -105,10 +105,8 @@ import { IosSearch } from '@vicons/ionicons4'
             border-radius: 50%;
 
             margin: 33px 5px 0px 5px;
-
           }
         }
-
       }
     }
   }
