@@ -1,14 +1,28 @@
 <script setup lang="ts">
+import navigation from '@/components/navigation/index.vue'
+import about from '@/views/About/index.vue'
 import { IosSearch } from '@vicons/ionicons4'
+let accptTitle
 
-// function title(value:string) {
-//   accptTitle = value
-// }
+function title(value: string) {
+  accptTitle = value
+  // if(accptTitle == '首页') {
+
+  // }
+}
 </script>
 
 <template>
   <div class="container">
+    <!-- <navigation ref="navigation" @send_title="title"/> -->
     <div class="content-main">
+      <div class="left">
+        <div>GOLANG</div>
+        <div>HTML5</div>
+        <div>CSS3</div>
+        <div>VUE</div>
+        <div>JAVASCRIPT</div>
+      </div>
       <div class="main">
         <div class="search">
           <div class="search-main">论如何找到女朋友的自我修养, 答：提高思想觉悟</div>
@@ -24,26 +38,42 @@ import { IosSearch } from '@vicons/ionicons4'
           <div>我们的人生就是：为了某些瞬间活着</div>
           <div>我们无法判断某个瞬间的价值 直到这个瞬间成为永恒</div>
           <div>那像大西洋一样蔚蓝的眼睛，使我像泰坦尼克号般不受控制地沉溺其中</div>
-          <div>樱花飘落的速度，每秒五厘米。</div>
-          <div>就算我们来往一千条信息，心却可能仅仅接近一厘米而已</div>
-          <div>隐约雷鸣，阴霾天空，但盼风雨来，能留你在此</div>
-          <div>隐约雷鸣，阴霾天空，即使天无雨，我亦留此地</div>
         </div>
       </div>
     </div>
+    <!-- <about  /> -->
   </div>
 </template>
 
 
 <style scoped lang="less">
 .container {
-  height: 120vh;
+  height: 100vh;
   width: 100vw;
 
   background-color: rgb(227, 227, 227);
   position: absolute;
 
   .content-main {
+    .left {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+
+      width: 304px;
+      height: 326px;
+
+      margin: 20px 0 0 100px;
+
+      padding: 5px;
+      background-color: white;
+      div {
+        line-height: 50px;
+        text-align: center;
+        border-bottom: 1px dashed black;
+        padding: 5px 5px;
+      }
+    }
 
     .main {
       width: 960px;
@@ -113,4 +143,8 @@ import { IosSearch } from '@vicons/ionicons4'
     }
   }
 }
+
+
+
+.left {}
 </style>

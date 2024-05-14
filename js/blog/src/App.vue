@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import Home from '../src/views/Home/index.vue'
+
+import navigation from './components/navigation/index.vue'
 </script>
 
 <template>
   <div>
-    <!-- <n-button>naive-ui</n-button> -->
-    <Home></Home>
+    <navigation />
+    <!-- <RouterView /> -->
   </div>
  
  
