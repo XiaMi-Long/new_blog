@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "naive-ui": "^2.38.2"
+    "naive-ui": "^2.38.2",
+    "scss": "^0.2.4"
   },
   "dependencies": {
     "@vicons/ionicons4": "^0.12.0",
