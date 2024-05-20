@@ -14,7 +14,6 @@ function title(value: string) {
 
 <template>
   <div class="container">
-    <!-- <navigation ref="navigation" @send_title="title"/> -->
     <div class="content-main">
       <div class="left">
         <div>GOLANG</div>
@@ -22,7 +21,7 @@ function title(value: string) {
         <div>CSS3</div>
         <div>VUE</div>
         <div>JAVASCRIPT</div>
-      </div>
+      </div> 
       <div class="main">
         <div class="search">
           <div class="search-main">论如何找到女朋友的自我修养, 答：提高思想觉悟</div>
@@ -46,10 +45,10 @@ function title(value: string) {
 </template>
 
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .container {
-  height: 100vh;
-  width: 100vw;
+  // height: 100vh;
+  // width: 100vw;
 
   background-color: rgb(227, 227, 227);
   position: absolute;
@@ -76,12 +75,14 @@ function title(value: string) {
     }
 
     .main {
+      position: absolute;
       width: 960px;
+      margin-left: 475px;
 
       background-color: rgb(240, 240, 240);
+      // background-color: blueviolet;
 
       padding: 20px 20px;
-      margin: 0 auto;
 
       box-sizing: border-box;
       overflow: hidden;
@@ -111,6 +112,8 @@ function title(value: string) {
 
         display: flex;
         flex-direction: column;
+
+        // background-color: aqua;
 
         div {
           height: 74px;

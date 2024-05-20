@@ -31,13 +31,11 @@ const arr = shallowRef([
   </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .container {
-  height: 100vh;
-  width: 100vw;
 
   background-color: rgb(227, 227, 227);
-  position: absolute;
+
 
   .content-main {
     .main {

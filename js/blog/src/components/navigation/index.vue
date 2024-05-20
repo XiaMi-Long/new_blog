@@ -12,9 +12,11 @@ function changeTitle(value) {
   console.log(value)
   if (value === '首页') {
     chooseComponent.value = Home
-  } else if (value === '文章') {
+  } 
+  else if (value === '文章') {
     chooseComponent.value = Article
-  } else if (value === '关于') {
+  } 
+  else if (value === '关于') {
     chooseComponent.value = About
   }
 }
@@ -33,7 +35,7 @@ onMounted((chooseComponent.value = Home))
   <component :is="chooseComponent"></component>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .navigation {
   background-color: rgb(247, 247, 247);
 
