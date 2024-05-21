@@ -4,34 +4,44 @@ import Home from '@/views/Home/index.vue'
 import Article from '@/views/Article/index.vue'
 import About from '@/views/About/index.vue'
 
-const titles = ref(['首页', '文章', '友链', '关于'])
+const titles = ref([
+  { name: '首页', selected: true },
+  { name: '文章', selected: false },
+  { name: '友链', selected: false },
+  { name: '关于', selected: false }
+])
 const chooseComponent = shallowRef()
 const emit = defineEmits(['send_title'])
 
-function changeTitle(value) {
+function changeTitle(value:any) {
   console.log(value)
-  if (value === '首页') {
-    chooseComponent.value = Home
-  } 
-  else if (value === '文章') {
-    chooseComponent.value = Article
-  } 
-  else if (value === '关于') {
-    chooseComponent.value = About
-  }
+  titles.value.forEach(title => {
+    title.selected = (title.name === value)
+    console.log('1111', title.selected);
+    if (value === '首页') {
+      chooseComponent.value = Home
+    } 
+    else if (value === '文章') {
+      chooseComponent.value = Article
+    } 
+    else if (value === '关于') {
+      chooseComponent.value = About
+    }
+  })
 }
 
-onMounted((chooseComponent.value = Home))
+onMounted(() => (chooseComponent.value = Home))
 </script>
 
 <template>
   <div class="navigation">
     <div class="version_heart">
-      <div v-for="title in titles" :key="title" class="title" @click="changeTitle(title)">
-        {{ title }}
+      <div v-for="title in titles" :key="title.name"  :class="['title', { 'title--selected': title.selected }]" @click="changeTitle(title.name)">
+        {{ title.name }}
       </div>
     </div>
   </div>
+  
   <component :is="chooseComponent"></component>
 </template>
 
@@ -62,9 +72,9 @@ onMounted((chooseComponent.value = Home))
 
       cursor: pointer;
 
-      &:after {
+      &::after {
         content: '';
-        display: block;
+        display: none;
 
         background-color: rgb(42, 103, 228);
         width: 45%;
@@ -75,6 +85,10 @@ onMounted((chooseComponent.value = Home))
         border-radius: 5px;
 
         text-align: center;
+      }
+
+      &.title--selected::after {
+        display: block;
       }
     }
   }

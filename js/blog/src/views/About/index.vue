@@ -13,7 +13,7 @@ const arr = shallowRef([
   },
   {
     title: '贡献者',
-    context: '衷心感谢以下朋友对项目的帮助'
+    context: '衷心感谢以下朋友对项目的帮助',
   }
 ])
 </script>
@@ -23,8 +23,11 @@ const arr = shallowRef([
     <div class="content-main">
       <div class="main">
         <div class="slot" v-for="(item, index) in arr" :key="index">
+
           <div class="title">{{ item.title }}</div>
+
           <div class="context">{{ item.context }}</div>
+
         </div>
       </div>
     </div>

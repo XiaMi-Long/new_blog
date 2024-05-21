@@ -1,15 +1,24 @@
 <script setup lang="ts">
-import navigation from '@/components/navigation/index.vue'
-import about from '@/views/About/index.vue'
+import { ref } from 'vue';
 import { IosSearch } from '@vicons/ionicons4'
-let accptTitle
 
-function title(value: string) {
-  accptTitle = value
-  // if(accptTitle == '首页') {
+const context = ref([
+  { paragraph: '如何布置进行洛琪希女朋友的攻略', selected: true },
+  { paragraph: '人的脆弱和坚强都超乎自己的想象。', selected: false },
+  { paragraph: '有时，我可能脆弱得一句话就泪流满面', selected: false },
+  { paragraph: '有时，也发现自己咬着牙走了很长的路', selected: false },
+  { paragraph: '我们的人生就是：为了某些瞬间活着', selected: false },
+  { paragraph: '我们无法判断某个瞬间的价值 直到这个瞬间成为永恒', selected: false },
+  { paragraph: '那像大西洋一样蔚蓝的眼睛，使我像泰坦尼克号般不受控制地沉溺其中', selected: false },
+])
 
-  // }
+const change_paragraph = function(value:any) {
+  console.log(value);
+  context.value.forEach(item => {
+    item.selected = (item.paragraph === value)
+  })
 }
+
 </script>
 
 <template>
@@ -29,18 +38,11 @@ function title(value: string) {
             <IosSearch />
           </n-icon>
         </div>
-        <div class="context">
-          <div>如何布置进行洛琪希女朋友的攻略</div>
-          <div>人的脆弱和坚强都超乎自己的想象。</div>
-          <div>有时，我可能脆弱得一句话就泪流满面</div>
-          <div>有时，也发现自己咬着牙走了很长的路</div>
-          <div>我们的人生就是：为了某些瞬间活着</div>
-          <div>我们无法判断某个瞬间的价值 直到这个瞬间成为永恒</div>
-          <div>那像大西洋一样蔚蓝的眼睛，使我像泰坦尼克号般不受控制地沉溺其中</div>
+        <div class="context" v-for="(item, index) in context" :key="index">
+          <div @click="change_paragraph(item.paragraph)" :class="{ active: item.selected }">{{  item.paragraph }}</div>
         </div>
       </div>
     </div>
-    <!-- <about  /> -->
   </div>
 </template>
 
@@ -80,12 +82,11 @@ function title(value: string) {
       margin-left: 475px;
 
       background-color: rgb(240, 240, 240);
-      // background-color: blueviolet;
 
       padding: 20px 20px;
 
       box-sizing: border-box;
-      overflow: hidden;
+      // overflow: hidden;
 
       .search {
         height: 66px;
@@ -108,12 +109,10 @@ function title(value: string) {
       }
 
       .context {
-        width: 960px;
+        width: 920px;
 
         display: flex;
         flex-direction: column;
-
-        // background-color: aqua;
 
         div {
           height: 74px;
@@ -125,6 +124,8 @@ function title(value: string) {
           font-weight: 400;
 
           letter-spacing: 2px;
+
+          position: relative;
 
           &:before {
             content: "";
@@ -139,6 +140,30 @@ function title(value: string) {
 
             margin: 33px 5px 0px 5px;
 
+            margin-right: 15px;
+
+          }
+        }
+
+        .active {
+          border-bottom: 3px solid rgba(212, 48, 48, 1);
+          position: relative;
+;
+          &:before {
+            content: '';
+            display: block;
+            background:  rgba(255, 87, 51, 1);
+;
+
+            width: 10px;
+            height: 10px;
+
+            float: left;
+            border-radius: 50%;
+
+            margin: 33px 15px 0px 5px;
+
+            // margin-right: 15px;
           }
         }
 
