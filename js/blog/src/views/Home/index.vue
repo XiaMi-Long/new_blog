@@ -29,9 +29,7 @@ const change_paragraph = function(value:any) {
     <div class="content-main">
       <div class="main">
         <div class="search">
-          <div class="search-main">
-            论如何找到女朋友的自我修养, 答：就算来往一千条信息，心却可能仅仅接近一厘米而已
-          </div>
+          <div class="search-main">论如何找到女朋友的自我修养, 答：拒绝 舔狗 拒绝 joker</div>
           <n-icon size="50">
             <IosSearch />
           </n-icon>
@@ -46,7 +44,6 @@ const change_paragraph = function(value:any) {
 
 <style scoped lang="scss">
 .container {
-
   box-sizing: border-box;
 
   background-color: rgb(227, 227, 227);
