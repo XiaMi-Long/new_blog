@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 import { IosSearch } from '@vicons/ionicons4'
 
 const context = ref([
@@ -13,13 +13,13 @@ const context = ref([
   { paragraph: '樱花飘落的速度，每秒五厘米。', selected: false },
   { paragraph: '就算我们来往一千条信息，心却可能仅仅接近一厘米而已', selected: false },
   { paragraph: '隐约雷鸣，阴霾天空，但盼风雨来，能留你在此', selected: false },
-  { paragraph: '隐约雷鸣，阴霾天空，即使天无雨，我亦留此地', selected: false },
+  { paragraph: '隐约雷鸣，阴霾天空，即使天无雨，我亦留此地', selected: false }
 ])
 
-const change_paragraph = function(value:any) {
-  console.log(value);
-  context.value.forEach(item => {
-    item.selected = (item.paragraph === value)
+const change_paragraph = function (value: any) {
+  console.log(value)
+  context.value.forEach((item) => {
+    item.selected = item.paragraph === value
   })
 }
 </script>
@@ -29,14 +29,16 @@ const change_paragraph = function(value:any) {
     <div class="content-main">
       <div class="main">
         <div class="search">
-          <div class="search-main">论如何找到女朋友的自我修养, 答：拒绝 舔狗 拒绝 joker</div>
+          <div class="search-main">林宥嘉-成全-song</div>
           <n-icon size="50">
             <IosSearch />
           </n-icon>
         </div>
-         <div class="context" v-for="(item, index) in context" :key="index">
-          <div @click="change_paragraph(item.paragraph)" :class="{ active: item.selected }">{{  item.paragraph }}</div>
-        </div> 
+        <div class="context" v-for="(item, index) in context" :key="index">
+          <div @click="change_paragraph(item.paragraph)" :class="{ active: item.selected }">
+            {{ item.paragraph }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -97,7 +99,7 @@ const change_paragraph = function(value:any) {
 
           letter-spacing: 2px;
 
-          position: relative; 
+          position: relative;
 
           &:before {
             content: '';
@@ -119,13 +121,10 @@ const change_paragraph = function(value:any) {
         .active {
           border-bottom: 3px solid rgba(212, 48, 48, 1);
           position: relative;
-;
           &:before {
             content: '';
             display: block;
-            background:  rgba(255, 87, 51, 1);
-;
-
+            background: rgba(255, 87, 51, 1);
             width: 10px;
             height: 10px;
 
